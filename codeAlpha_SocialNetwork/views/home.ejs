@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="/style.css">
+
+<div class="navbar">
+<h2>CodeAlpha Social</h2>
+<p>Welcome <%= user.username %></p>
+</div>
+
+<div class="post-box">
+<form action="/post" method="POST">
+<input name="content" placeholder="What's on your mind?" required>
+<button>Post</button>
+</form>
+</div>
+
+<% posts.forEach(post => { %>
+<div class="card">
+<h4><%= post.user %></h4>
+<p><%= post.content %></p>
+<form action="/like/<%= post._id %>" method="POST">
+<button>❤️ <%= post.likes %></button>
+</form>
+</div>
+<% }) %>
