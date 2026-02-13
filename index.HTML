@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CodeAlpha Music Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="player">
+
+        <div class="details">
+            <img id="track-image" src="images/default.jpg">
+            <h2 id="track-name">Song Name</h2>
+            <p id="track-artist">Artist</p>
+        </div>
+
+        <div class="progress-container">
+            <span id="current-time">0:00</span>
+            <input type="range" id="progress" value="0">
+            <span id="duration">0:00</span>
+        </div>
+
+        <div class="controls">
+            <button onclick="prevTrack()">⏮</button>
+            <button onclick="playPause()">▶️</button>
+            <button onclick="nextTrack()">⏭</button>
+        </div>
+
+        <div class="volume">
+            🔊 <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+        </div>
+
+        <ul id="playlist"></ul>
+
+    </div>
+</div>
+
+<audio id="audio"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
